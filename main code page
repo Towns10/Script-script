@@ -1,0 +1,55 @@
+using System.IO;
+using System;
+
+class Program
+{
+    string userChoice1;
+    string userChoice2;
+    string productKey;
+    string programName;
+    string fileName;
+    
+    
+    static void Main()
+    {
+// ask for and get response to what user wants to do? install, uninstall, update, etc
+        Console.WriteLine("What do you want to do? You can choose Install, MSIExec Product Key Uninstall(PKU), Program Name Uninstall(PNU), or Upgrade?");
+        string userChoice1 = Console.ReadLine();
+        switch (userChoice1)
+        {
+            Case "Install" :
+                //stuff for install
+            Case "PKU" :
+                Console.WriteLine("What is the product key?");
+                productKey = Console.ReadLine();
+                Console.WriteLine("What is this file called?");
+                fileName = Console.ReadLine();
+                StreamWriter sw = new StreamWriter("c:\\"+ fileName);
+                sw.WriteLine("the batch file stuff goes here");
+                sw.Close();
+                Console.WriteLine("Your file is saved to the root drive with name"+ fileName+". To finish you will have to change it to a .bat file.");
+                Console.ReadLine();
+                break;
+            Case "PNU" :
+                Console.WriteLine("What is the program name?");
+                programName = Console.ReadLine();
+                Console.WriteLine("What is this file called?");
+                fileName = Console.ReadLine();
+                StreamWriter sw = new StreamWriter("c:\\"+ fileName);
+                sw.WriteLine("the batch file stuff goes here");
+                sw.Close();
+                Console.WriteLine("Your file is saved to the root drive with name"+ fileName+". To finish you will have to change it to a .bat file.");
+                Console.ReadLine();
+                break;
+            Case "Update" :
+                //stuff for update
+            default:
+                Console.WriteLine("That is not a valid option.")
+        }
+// if install
+// if uninstall
+// if update
+// if none of the above
+
+    }
+}
