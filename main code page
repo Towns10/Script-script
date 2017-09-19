@@ -3,12 +3,12 @@ using System;
 
 class Program
 {
-    string userChoice1;
+    static string userChoice1;
     string userChoice2;
     string productKey;
     string programName;
     string fileName;
-    
+    string installPath;
     
     static void Main()
     {
@@ -17,35 +17,37 @@ class Program
         string userChoice1 = Console.ReadLine();
         switch (userChoice1)
         {
-            Case "Install" :
-                //stuff for install
-            Case "PKU" :
+            case "Install" :
+                Console.WriteLine("What is the path for your install?");
+                string installPath = Console.ReadLine();
+                Console.WriteLine("What is this file called?");
+
+                break;
+            case "PKU" :
                 Console.WriteLine("What is the product key?");
-                productKey = Console.ReadLine();
+                string productKey = Console.ReadLine();
                 Console.WriteLine("What is this file called?");
-                fileName = Console.ReadLine();
-                StreamWriter sw = new StreamWriter("c:\\"+ fileName);
-                sw.WriteLine("the batch file stuff goes here");
-                sw.Close();
-                Console.WriteLine("Your file is saved to the root drive with name"+ fileName+". To finish you will have to change it to a .bat file.");
-                Console.ReadLine();
+
                 break;
-            Case "PNU" :
+            case "PNU" :
                 Console.WriteLine("What is the program name?");
-                programName = Console.ReadLine();
+                string programName = Console.ReadLine();
                 Console.WriteLine("What is this file called?");
-                fileName = Console.ReadLine();
-                StreamWriter sw = new StreamWriter("c:\\"+ fileName);
-                sw.WriteLine("the batch file stuff goes here");
-                sw.Close();
-                Console.WriteLine("Your file is saved to the root drive with name"+ fileName+". To finish you will have to change it to a .bat file.");
-                Console.ReadLine();
+
                 break;
-            Case "Update" :
+            case "Update" :
                 //stuff for update
+                break;
             default:
-                Console.WriteLine("That is not a valid option.")
+                Console.WriteLine("That is not a valid option.");
+                break;
         }
+        string fileName = Console.ReadLine();
+        StreamWriter sw = new StreamWriter("c:\\"+ fileName);
+        sw.WriteLine("the batch file stuff goes here");
+        sw.Close();
+        Console.WriteLine("Your file is saved to the root drive with name"+ fileName+". To finish you will have to change it to a .bat file.");
+        Console.ReadLine(); 
 // if install
 // if uninstall
 // if update
